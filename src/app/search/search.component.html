@@ -1,0 +1,48 @@
+<div class="row">
+  <div class="col">
+    <div class="form-group">
+      <label for="">Depth</label>
+      <select name="depth" id="" class="form-control" [(ngModel)]="depth">
+        <option value="60">60mm</option>
+        <option value="40">40mm</option>
+      </select>
+    </div>
+  </div>
+  <div class="col">
+    <div class="form-group">
+      <label for="">Width</label>
+      <input type="number" class="form-control" [(ngModel)]="width">
+    </div>
+  </div>
+  <div class="col">
+    <div class="form-group">
+      <label for="">Length</label>
+      <input type="number" class="form-control" [(ngModel)]="length">
+    </div>
+  </div>
+  <div class="col">
+    <button class="btn btn-primary btn-block" (click)="onSearch()">Search</button>
+  </div>
+</div>
+<div class="row" *ngIf="result">
+  <div class="col">
+    Depth: {{ result.depth }}
+  </div>
+  <div class="col">
+    Width: {{ result.width }}
+  </div>
+  <div class="col">
+    Length: {{ result.length }}
+  </div>
+  <div class="col">
+    Price: {{ result.price }}
+  </div>
+  <div class="col">
+    <div class="form-group">
+      <input type="number" placeholder="Nr. of wood planks you need" class="form-control" [(ngModel)]="result.number">
+    </div>
+  </div>
+  <div class="col">
+    <button class="btn btn-success" (click)="onAdd()">Add</button>
+  </div>
+</div>

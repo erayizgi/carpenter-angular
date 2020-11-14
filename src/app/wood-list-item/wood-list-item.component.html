@@ -1,0 +1,30 @@
+<li class="row">
+  <div class="col text-center">
+    {{ wood.depth }}
+  </div>
+  <div class="col text-center">
+    {{ wood.width }}
+  </div>
+  <div class="col text-center">
+    {{ wood.length }}
+  </div>
+  <div class="col text-center">
+    {{ wood.price }}
+  </div>
+  <div class="col text-center" *ngIf="!showInputs" (dblclick)="onEdit()">
+    {{ wood.number }}
+  </div>
+  <div class="col text-center" *ngIf="showInputs">
+    <div class="form-group">
+      <input type="number" class="form-control" [(ngModel)]="wood.number">
+    </div>
+  </div>
+
+  <div class="col text-center">
+    {{ wood.number * wood.price}}
+  </div>
+  <div class="col">
+    <button class="btn btn-warning"  *ngIf="!showInputs" (click)="onEdit()">Edit</button>
+    <button class="btn btn-success"  *ngIf="showInputs" (click)="onSave()">Save</button>
+  </div>
+</li>
